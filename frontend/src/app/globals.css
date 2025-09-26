@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply antialiased;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-800/50;
+    border-radius: 3px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-blue-500/50;
+    border-radius: 3px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-blue-500/70;
+  }
+  
+  /* Loading animation */
+  .loading-dots {
+    display: inline-block;
+    position: relative;
+    width: 20px;
+    height: 20px;
+  }
+  
+  .loading-dots div {
+    position: absolute;
+    top: 8px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: currentColor;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+  }
+  
+  .loading-dots div:nth-child(1) {
+    left: 2px;
+    animation: loading1 0.6s infinite;
+  }
+  
+  .loading-dots div:nth-child(2) {
+    left: 2px;
+    animation: loading2 0.6s infinite;
+  }
+  
+  .loading-dots div:nth-child(3) {
+    left: 8px;
+    animation: loading2 0.6s infinite;
+  }
+  
+  .loading-dots div:nth-child(4) {
+    left: 14px;
+    animation: loading3 0.6s infinite;
+  }
+  
+  @keyframes loading1 {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); }
+  }
+  
+  @keyframes loading3 {
+    0% { transform: scale(1); }
+    100% { transform: scale(0); }
+  }
+  
+  @keyframes loading2 {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(6px, 0); }
+  }
+  
+  /* Line clamp utility */
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+}
+
+@layer components {
+  /* Glass morphism effect */
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+  
+  .glass-dark {
+    @apply bg-black/10 backdrop-blur-md border border-white/10;
+  }
+  
+  /* Button variants */
+  .btn-primary {
+    @apply bg-blue-600 hover:bg-blue-700 text-white font-medium px-4 py-2 rounded-lg transition-colors;
+  }
+  
+  .btn-secondary {
+    @apply bg-white/10 hover:bg-white/20 text-white font-medium px-4 py-2 rounded-lg transition-colors border border-white/20;
+  }
+  
+  .btn-danger {
+    @apply bg-red-500/20 hover:bg-red-500/30 text-red-200 font-medium px-4 py-2 rounded-lg transition-colors border border-red-500/30;
+  }
+  
+  /* Card variants */
+  .card {
+    @apply glass rounded-xl p-6;
+  }
+  
+  .card-hover {
+    @apply card hover:bg-white/20 transition-all duration-200 cursor-pointer;
+  }
+}
+
+html, body {
+  height: 100%;
+  background: linear-gradient(135deg, #0f172a 0%, #1e40af 50%, #0f172a 100%);
+  margin: 0;
+  padding: 0;
+}
+
+#__next {
+  height: 100%;
+}

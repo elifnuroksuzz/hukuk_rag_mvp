@@ -1,0 +1,44 @@
+# Hukuk RAG MVP Konfigürasyon
+
+# Vektör Veritabanı Ayarları
+vector_db:
+  provider: "chromadb"  # chromadb, pinecone, weaviate
+  collection_name: "hukuk_documents"
+  persist_directory: "./data/chroma_db"
+  
+# Embedding Modeli
+embedding:
+  model_name: "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+  chunk_size: 1000
+  chunk_overlap: 200
+  
+# LLM Ayarları
+llm:
+  provider: "huggingface"  # openai, huggingface, ollama
+  base_url: "https://router.huggingface.co/v1"
+  model: "openai/gpt-oss-120b:novita"
+  alternative_model: "openai/gpt-oss-20b:novita"
+  temperature: 0.1
+  max_tokens: 1000
+  
+# Document Processing
+document_processing:
+  supported_formats: [".pdf", ".docx", ".txt"]
+  max_file_size_mb: 50
+  language: "turkish"
+  
+# RAG Ayarları
+retrieval:
+  top_k: 5
+  similarity_threshold: 0.05
+  
+# UI Ayarları
+ui:
+  page_title: "Hukuk RAG Asistanı"
+  page_icon: "⚖️"
+  max_chat_history: 50
+
+# Logging
+logging:
+  level: "INFO"
+  file: "./logs/app.log"
