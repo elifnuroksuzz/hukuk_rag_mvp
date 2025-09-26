@@ -253,27 +253,6 @@ jobs:
 
 ---
 
-## 📈 Roadmap
-
-### Phase 1 (Tamamlandı ✅)
-- [x] Temel RAG pipeline
-- [x] Web arayüzü
-- [x] API endpoints
-- [x] Belge işleme sistemi
-
-### Phase 2 (Devam Ediyor 🔄)
-- [ ] Docker containerization
-- [ ] Metadata extraction
-- [ ] Advanced chunking
-- [ ] Performance optimization
-
-### Phase 3 (Planlanmış 📋)
-- [ ] Multi-language support
-- [ ] Advanced analytics
-- [ ] Mobile application
-- [ ] Cloud deployment
-
----
 
 ## 📝 Lisans & İletişim
 
@@ -296,3 +275,4 @@ jobs:
 ### 🌟 Bu projeyi beğendiyseniz star vermeyi unutmayın!
 
 </div>
+
